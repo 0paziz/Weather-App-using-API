@@ -4,54 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+    
+   
     <link rel="stylesheet" href="styles/style.css">
+
 </head>
 <body>
     
-    <header></header>
+    <header>
 
+    </header>
+
+
+    <div class="bg-image"></div>
 
     <main>
-       
-            <div class="User-form-container">
-                <h1>Weather App</h1>
+ 
 
-            <form method="get" action="">
-                <label for="city_name">Check Weather foreCast</label>
-                <input type="text" name="city_name" id="input_city_name" placeholder="enter city name eg:kismayo,moqadisho" > 
-                <button id="Checkbtn">Check</button>
+        <div class="User-form-container">
+            <h1 style="margin-bottom: 50px;">Weather App</h1>
+            <form id="f1" method="get" action="">
+                <label for="city_name">Check Weather Forecast</label>
+                <div class="input-group">
+                    <input type="text" name="city_name" id="input_city_name" placeholder="enter city name e.g., kismayo, mogadishu">
+                    <button id="Checkbtn">Check</button>
+                </div>
             </form>
+        </div>
 
-            </div>
-            
             <div class="Weather-info-container">
-            <div class="Weather-info-card">
-
+         
                 <div class="Top-corner-content">
-                    <h6><span id="cityName">City</span></h6>
-                    <h6><span id="CurrentTime">15:60</span></h6>
+                    <h6><span id="cityName"></span></h6>
+                    <h6><span id="CurrentTime"></span></h6>
                 </div>
 
                 <div class="center-content">
-                    <h6><span id="Tempreature">Tempreature</span></h6>
-                    <h6><span id="Description">Description</span></h6>
+                    <h6><span id="Tempreature"></span></h6>
+                    <h6><span id="Description"></span></h6>
                 </div>
 
                 <div class="bottom-corner-content">
                     <ul>
-                        <li><span id="wind">Wind</span></li>
-                        <li><span id="humidity">humidity</span></li>
-                        <li><span id="metrics">metrics</span></li>
+                    <li>Wind: <span id="wind"></span></li>
+                        <li>Humidity: <span id="humidity"></span></li>
                     </ul>
-                 
-                </div>
-                <div class="image">
-                    <img id="weather-icon" src="images/cloudy.png" alt="Weather Icon" height="30">
+                    <img id="weather-icon" src="" alt="Weather Icon" height="70">
                 </div>
             </div>
-        </div>
+        
     </main>
 
     <footer></footer>
+    <script src="index.js"></script>
 </body>
 </html>
