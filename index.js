@@ -38,22 +38,22 @@ const data= await response.json();
 
    switch(data.weather[0].main){
     case "Clouds":
-               weather_iconID.src="/images/clouds.png";
+               weather_iconID.src="images/clouds.png";
                break;
         case "Drizzle":
-                weather_iconID.src="/images/drizzle.png";
+                weather_iconID.src="images/drizzle.png";
                 break; 
         case "Rain":
-                weather_iconID.src="/images/rainy-day.png";
+                weather_iconID.src="images/rainy-day.png";
                 break; 
         case "Mist":
-                weather_iconID.src="/images/cloudy.png";
+                weather_iconID.src="images/cloudy.png";
                 break; 
         case "Snow":
-                weather_iconID.src="/images/snow.png";
+                weather_iconID.src="images/snow.png";
                 break; 
     case "Clear":
-                weather_iconID.src="/images/sunny.png";
+                weather_iconID.src="images/sunny.png";
                 break;
    }
 
