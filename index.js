@@ -1,6 +1,8 @@
 const WeatherInfoContainer= document.querySelector(".Weather-info-container");
 const form= document.getElementById("f1");
+const MessageDisplay= document.querySelector(".Message");
 const inputData= document.getElementById("input_city_name");
+
 const API_KEY="9ed77c49ebaad449085c02fb3b0979eb";
 const API_url=`https://api.openweathermap.org/data/2.5/weather?units=metric&q=`;
 
@@ -19,11 +21,32 @@ const humidityID=document.getElementById("humidity");
 const weather_iconID=document.getElementById("weather-icon");
 
 
-async function display(city){
+
+let inputValue=""
+
+async function display(){
+
+   inputValue=inputData.value.trim();
+
+        if(!inputValue){
+                MessageDisplay.innerHTML=`
+                        <p>you can't left blank Please try again with Valid City name.</p>
+                `
+                 MessageDisplay.style.display="flex"
+                return
+
+            }
+
+
   
-   
-const response= await fetch(API_url + city + `&appid=${API_KEY}`);
-const data= await response.json();
+   try{
+
+        const response= await fetch(API_url + inputValue + `&appid=${API_KEY}`);
+        const data= await response.json();
+
+
+
+
  console.log(data);
 
     cityNameID.innerHTML=data.name;
@@ -57,20 +80,23 @@ const data= await response.json();
                 break;
    }
 
+   WeatherInfoContainer.style.display="flex";
+      MessageDisplay.style.display="none"
+}
+   catch (error) {
+        console.error("Error fetching Data:", error);
+        WeatherInfoContainer.style.display="none";
+        MessageDisplay.style.display="flex"
+    }
+
 }
 
 
 
 form.addEventListener("submit", (event)=>{
     event.preventDefault();
-    let inputValue=inputData.value.trim();
-    display(inputValue);
-    if(!inputValue){
-        alert("you cant left it blank");
-    }
-    else{
-    WeatherInfoContainer.style.display="flex";
-    }
+    display();
+  
 });
 
 
