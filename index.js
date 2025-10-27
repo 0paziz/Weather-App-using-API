@@ -1,11 +1,10 @@
+  import { API_KEY } from './config.js';
 const WeatherInfoContainer= document.querySelector(".Weather-info-container");
 const form= document.getElementById("f1");
 const MessageDisplay= document.querySelector(".Message");
 const inputData= document.getElementById("input_city_name");
 
-const API_KEY="9ed77c49ebaad449085c02fb3b0979eb";
 const API_url=`https://api.openweathermap.org/data/2.5/weather?units=metric&q=`;
-
 
 
 const cityNameID=document.getElementById("cityName");
